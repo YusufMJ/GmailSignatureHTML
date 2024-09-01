@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <img id="cloud" src="https://raincode.tech/wp-content/uploads/2024/08/0-cloud-6.png" alt="Cloud">
+    <nav>
         <h1>Gmail Signature Generator</h1>
+    </nav>
+    <div class="container">
+        <header class="form-header">
+            <h2>Create Your Professional Email Signature</h2>
+            <p>Fill in the details below to generate a custom signature for your Gmail account.</p>
+        </header>
         <form id="signatureForm">
             <input type="text" id="name" placeholder="Name" required value="John Doe">
             <input type="text" id="jobTitle" placeholder="Job Title" required value="Software Engineer">
@@ -18,15 +25,27 @@
             <input type="url" id="website" placeholder="Website URL" required value="https://www.johndoe.com">
             <input type="text" id="location" placeholder="Location" required value="New York, NY">
             <input type="text" id="company" placeholder="Company Name" required value="Tech Solutions Inc.">
-            <button type="submit">Generate Signature</button>
+            <button type="submit" class="btn btn-green">Generate Signature</button>
         </form>
         <div id="signaturePreview" class="hidden">
             <h2>Your Signature</h2>
-            <div id="signatureContent"></div>
-            <button id="copySignature">Copy Signature</button>
-            <button id="downloadSignature">Download as PNG</button>
+            <div id="signatureContent" class="white-background"></div>
+            <div class="button-group">
+                <button id="copySignature" class="btn btn-blue">Copy Signature</button>
+                <button id="downloadSignature" class="btn btn-blue">Download as PNG</button>
+            </div>
+        </div>
+        <!-- Add this right after the form closing tag -->
+        <div id="loadingAnimation" class="loading-animation hidden">
+            <div class="spinner"></div>
+            <p>Generating signature...</p>
         </div>
     </div>
+    <footer>
+        <div class="footer-content">
+            © 2024 Raincode
+        </div>
+    </footer>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>

@@ -1,3 +1,5 @@
+const loadingAnimation = document.getElementById('loadingAnimation');
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('signatureForm');
     const signaturePreview = document.getElementById('signaturePreview');
@@ -5,9 +7,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyButton = document.getElementById('copySignature');
     const downloadButton = document.getElementById('downloadSignature');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        generateSignature();
+        
+        // Show loading animation
+        loadingAnimation.classList.remove('hidden');
+        
+        // Hide the form
+        form.classList.add('hidden');
+        
+        try {
+            await generateSignature();
+            // When signature generation is complete, show the preview
+            signaturePreview.classList.remove('hidden');
+        } catch (error) {
+            console.error('Error generating signature:', error);
+            alert('An error occurred while generating the signature. Please try again.');
+        } finally {
+            // Hide loading animation
+            loadingAnimation.classList.add('hidden');
+            
+            // Show the form again
+            form.classList.remove('hidden');
+        }
     });
 
     copyButton.addEventListener('click', copySignature);
@@ -22,33 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const company = document.getElementById('company').value;
         const imageFile = document.getElementById('image').files[0];
 
-        try {
-            const imageUrl = await uploadImageToImgBB(imageFile);
-            const signatureHTML = `
-                <table style="font-family: 'Noto Sans', sans-serif; color: #191919; border-collapse: collapse;">
-                    <tr>
-                        <td style="padding-right: 15px; vertical-align: top;">
-                            <img src="${imageUrl}" alt="${name}" style="width: 100px; height: 100px; border-radius: 50%;">
-                        </td>
-                        <td style="border-left: 2px solid #5BD091; padding-left: 15px; vertical-align: top;">
-                            <strong style="font-size: 18px; color: #4075C1;">${name}</strong><br>
-                            <span style="font-size: 14px; color: #5BD091;">${jobTitle}</span><br>
-                            <span style="font-size: 14px;">${company}</span><br>
-                            <br>
-                            <span style="font-size: 14px;">${phone}</span><br>
-                            <a href="${website}" style="color: #5BD091; text-decoration: none; font-size: 14px;">${website}</a><br>
-                            <span style="font-size: 14px;">${location}</span>
-                        </td>
-                    </tr>
-                </table>
-            `;
+        const imageUrl = await uploadImageToImgBB(imageFile);
+        const signatureHTML = `
+            <table style="font-family: 'Noto Sans', sans-serif; color: #191919; border-collapse: collapse;">
+                <tr>
+                    <td style="padding-right: 15px; vertical-align: top;">
+                        <img src="${imageUrl}" alt="${name}" style="width: 100px; height: 100px; border-radius: 50%;">
+                    </td>
+                    <td style="border-left: 2px solid #5BD091; padding-left: 15px; vertical-align: top;">
+                        <strong style="font-size: 18px; color: #4075C1;">${name}</strong><br>
+                        <span style="font-size: 14px; color: #5BD091;">${jobTitle}</span><br>
+                        <span style="font-size: 14px;">${company}</span><br>
+                        <br>
+                        <span style="font-size: 14px;">${phone}</span><br>
+                        <a href="${website}" style="color: #5BD091; text-decoration: none; font-size: 14px;">${website}</a><br>
+                        <span style="font-size: 14px;">${location}</span>
+                    </td>
+                </tr>
+            </table>
+        `;
 
-            signatureContent.innerHTML = signatureHTML;
-            signaturePreview.classList.remove('hidden');
-        } catch (error) {
-            console.error('Error generating signature:', error);
-            alert('An error occurred while generating the signature. Please try again.');
-        }
+        signatureContent.innerHTML = signatureHTML;
     }
 
     async function uploadImageToImgBB(imageFile) {
@@ -76,11 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.getSelection().addRange(range);
         document.execCommand('copy');
         window.getSelection().removeAllRanges();
-        alert('Signature copied to clipboard!');
     }
 
     function downloadSignature() {
-        html2canvas(signatureContent).then(canvas => {
+        html2canvas(signatureContent, {
+            backgroundColor: '#ffffff'
+        }).then(function(canvas) {
             const link = document.createElement('a');
             link.download = 'gmail_signature.png';
             link.href = canvas.toDataURL();

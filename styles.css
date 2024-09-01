@@ -6,76 +6,245 @@
     --black: #000000;
 }
 
+/* Base styles */
 body {
     font-family: 'Noto Sans', sans-serif;
-    background-color: var(--white);
-    color: var(--dark-gray);
-    line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 80px 0 0;
+    background-color: #f5f5f5;
+    background-image: url('https://raincode.tech/wp-content/uploads/2024/08/About-section.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Layout */
 .container {
-    max-width: 800px;
+    max-width: 1140px;
+    width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: 60px;
 }
 
-h1 {
-    color: var(--primary-blue);
+/* Navigation */
+nav {
+    background-color: var(--dark-gray);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav h1 {
+    margin: 0;
     text-align: center;
+    background: linear-gradient(to right, var(--primary-green), var(--primary-blue));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+}
+
+/* Form styles */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    font-size: 16px;
+    opacity: 0.8;
 }
 
 form {
     display: grid;
-    gap: 1rem;
-}
-
-input, button {
+    gap: 15px;
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid var(--dark-gray);
-    border-radius: 4px;
+    max-width: 600px;
+    margin: 0 auto 20px;
 }
 
-button {
-    background-color: var(--primary-green);
+input {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
     color: var(--white);
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    appearance: none;
 }
 
-button:hover {
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button styles */
+.btn {
+    color: var(--black);
+    border: 2px solid var(--black);
+    background-color: var(--white);
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    max-width: 268px;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-blue {
     background-color: var(--primary-blue);
 }
 
-.hidden {
+.btn-blue:hover {
+    background-color: #3567A8;
+}
+
+.btn-green {
+    background-color: var(--primary-green);
+}
+
+.btn-green:hover {
+    background-color: #4EBF7D;
+}
+
+/* Signature preview */
+#signaturePreview {
+    margin-top: 30px;
+}
+
+#signaturePreview.hidden {
     display: none;
 }
 
-#signaturePreview {
-    margin-top: 2rem;
+#signatureContent {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
 }
 
-#signatureContent {
-    border: 1px solid var(--dark-gray);
-    padding: 1rem;
-    margin-bottom: 1rem;
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-content {
+    font-size: 14px;
+}
+
+/* Cloud animation */
+#cloud {
+    width: 966px;
+    height: 580px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    animation: moveClouds 55s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+@keyframes moveClouds {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(100px);
+        opacity: 1;
+    }
+}
+
+/* Loading animation */
+.loading-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loading-animation.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--white);
+    border-top: 5px solid var(--primary-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-animation p {
+    margin-top: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Utility classes */
+.white-background {
     background-color: var(--white);
 }
 
-#signatureContent table {
-    border-collapse: collapse;
-}
-
-#signatureContent td {
-    vertical-align: top;
-}
-
+/* Media queries */
 @media (max-width: 600px) {
+    body {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
     .container {
-        padding: 1rem;
+        padding: 10px 10px 60px;
+    }
+    
+    form {
+        margin-bottom: 10px;
+    }
+    
+    #cloud {
+        width: 483px;
+        height: 290px;
     }
 }
