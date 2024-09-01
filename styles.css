@@ -1,0 +1,81 @@
+:root {
+    --primary-green: #5BD091;
+    --primary-blue: #4075C1;
+    --dark-gray: #191919;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--white);
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--primary-blue);
+    text-align: center;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+input, button {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--dark-gray);
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--primary-green);
+    color: var(--white);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-blue);
+}
+
+.hidden {
+    display: none;
+}
+
+#signaturePreview {
+    margin-top: 2rem;
+}
+
+#signatureContent {
+    border: 1px solid var(--dark-gray);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--white);
+}
+
+#signatureContent table {
+    border-collapse: collapse;
+}
+
+#signatureContent td {
+    vertical-align: top;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+}

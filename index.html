@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Signature Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gmail Signature Generator</h1>
+        <form id="signatureForm">
+            <input type="text" id="name" placeholder="Name" required value="John Doe">
+            <input type="text" id="jobTitle" placeholder="Job Title" required value="Software Engineer">
+            <input type="file" id="image" accept="image/*" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required value="+1 (555) 123-4567">
+            <input type="url" id="website" placeholder="Website URL" required value="https://www.johndoe.com">
+            <input type="text" id="location" placeholder="Location" required value="New York, NY">
+            <input type="text" id="company" placeholder="Company Name" required value="Tech Solutions Inc.">
+            <button type="submit">Generate Signature</button>
+        </form>
+        <div id="signaturePreview" class="hidden">
+            <h2>Your Signature</h2>
+            <div id="signatureContent"></div>
+            <button id="copySignature">Copy Signature</button>
+            <button id="downloadSignature">Download as PNG</button>
+        </div>
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
