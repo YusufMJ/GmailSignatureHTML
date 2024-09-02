@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const imageFile = document.getElementById('image').files[0];
 
         const imageUrl = await uploadImageToImgBB(imageFile, apikey);
-        alert(imageUrl);
         const signatureHTML = `
         <table style="color: black;width: 600px;">
             <tr>
