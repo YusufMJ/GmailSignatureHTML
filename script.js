@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const imageUrl = await uploadImageToImgBB(imageFile, apikey);
         const signatureHTML = `
-        <table style="color: black;width: 600px;">
+        <table style="color: black;width: 600px;background-color: #ffffff; ">
             <tr>
                 <td colspan="2" style="padding-top: 20px; text-align: end;">
                     <img style="width: 100px;" src="https://new.raincode.se/wp-content/uploads/2024/07/Raincode.png" alt="raincode logo">
                 </td>
             </tr>
         </table>
-        <table style="color: black;font-family: 'sans-serif', Arial, sans-serif; margin-left: 20px; max-width: 600px; background-color: #ffffff; border-collapse: collapse;">
+        <table style="color: black;font-family: 'sans-serif', Arial, sans-serif; width: 600px; background-color: #ffffff; border-collapse: collapse;">
             <tbody>
                 <tr>
                     <td style="width: 240px;">
@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     <td>
                         <div style="font-size: 43.2px; font-weight: 900; line-height: 43.2px; word-break: break-all;">${name}
-                            <div style="font-size: 24.9px; font-weight: 500; margin-bottom: 20px; line-height: 24.9px;">&nbsp;${jobTitle}</div>
                         </div>
+                        <div style="font-size: 24.9px; font-weight: 500; margin-bottom: 20px; line-height: 24.9px;padding-left:3px;"> ${jobTitle}</div>
                         <div style="font-size: 11.1px;">
                             <table role="presentation" cellspacing="0" cellpadding="0" style="color: black;border-collapse: collapse;">
                                 <tr>
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <img style="width: 16px; height: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/09/Union.png" alt="globe icon">
                                     </td>
                                     <td style="vertical-align: middle; text-transform: uppercase;">
-                                        <a href="https://${website}" style="text-decoration: none;">${website}</a>
+                                        <a href="https://${website}" style="text-decoration: none;color: #000;">${website}</a>
                                     </td>
                                 </tr>
                             </table>
