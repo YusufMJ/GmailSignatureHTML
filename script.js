@@ -47,23 +47,63 @@ document.addEventListener('DOMContentLoaded', () => {
         const imageUrl = await uploadImageToImgBB(imageFile);
         alert(imageUrl);
         const signatureHTML = `
-            <table style="font-family: 'Noto Sans', sans-serif; color: #191919; border-collapse: collapse;">
+        <table style="color: black;width: 600px;">
+            <tr>
+                <td colspan="2" style="padding-top: 20px; text-align: end;">
+                    <img style="width: 100px;" src="https://new.raincode.se/wp-content/uploads/2024/07/Raincode.png" alt="raincode logo">
+                </td>
+            </tr>
+        </table>
+        <table style="color: black;font-family: 'sans-serif', Arial, sans-serif; margin-left: 20px; max-width: 600px; background-color: #ffffff; border-collapse: collapse;">
+            <tbody>
                 <tr>
-                    <td style="padding-right: 15px; vertical-align: top;">
-                        <img src="${imageUrl}" alt="${name}" style="width: 100px; height: 100px; border-radius: 50%;">
+                    <td style="width: 240px;">
+                        <div style="display: inline-block; padding: 10px 10px 7px 10px; background: linear-gradient(to bottom, #5BD091, #4075C1); border-radius: 50%;">
+                            <img src="${imageUrl}" alt="Profile Picture" style="border-radius: 50%; height: 200px; width: 200px;"/>
+                        </div>
                     </td>
-                    <td style="border-left: 2px solid #5BD091; padding-left: 15px; vertical-align: top;">
-                        <strong style="font-size: 18px; color: #4075C1;">${name}</strong><br>
-                        <span style="font-size: 14px; color: #5BD091;">${jobTitle}</span><br>
-                        <span style="font-size: 14px;">${company}</span><br>
-                        <br>
-                        <span style="font-size: 14px;">${phone}</span><br>
-                        <a href="${website}" style="color: #5BD091; text-decoration: none; font-size: 14px;">${website}</a><br>
-                        <span style="font-size: 14px;">${location}</span>
+                    
+                    <td>
+                        <div style="font-size: 43.2px; font-weight: 900; line-height: 43.2px; word-break: break-all;">${name}
+                            <div style="font-size: 24.9px; font-weight: 500; margin-bottom: 20px; line-height: 24.9px;">&nbsp;${jobTitle}</div>
+                        </div>
+                        <div style="font-size: 11.1px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" style="color: black;border-collapse: collapse;">
+                                <tr>
+                                    <td style="vertical-align: middle; padding-right: 10px;">
+                                        <img style="width: 16px; height: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/08/phone-24px.png" alt="phone icon">
+                                    </td>
+                                    <td style="vertical-align: middle; text-transform: uppercase;">
+                                        ${phone}
+                                    </td>
+                                </tr>
+                            </table>
+                            <table role="presentation" cellspacing="0" cellpadding="0" style="color: black;border-collapse: collapse; margin-top: 5px;">
+                                <tr>
+                                    <td style="vertical-align: middle; padding-right: 10px;">
+                                        <img style="width: 16px; height: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/09/Union.png" alt="globe icon">
+                                    </td>
+                                    <td style="vertical-align: middle; text-transform: uppercase;">
+                                        <a href="https://${website}" style="text-decoration: none;">${website}</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table role="presentation" cellspacing="0" cellpadding="0" style="color: black;border-collapse: collapse; margin-top: 5px;">
+                                <tr>
+                                    <td style="vertical-align: middle; padding-right: 10px;">
+                                        <img style="width: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/08/Vector.png" alt="location icon">
+                                    </td>
+                                    <td style="vertical-align: middle; text-transform: uppercase;">
+                                        ${location}
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </td>
                 </tr>
-            </table>
-        `;
+            </tbody>
+        </table>
+    `;
 
         signatureContent.innerHTML = signatureHTML;
     }
