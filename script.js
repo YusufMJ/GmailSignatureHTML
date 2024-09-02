@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = document.getElementById('phone').value;
         const website = document.getElementById('website').value;
         const location = document.getElementById('location').value;
-        const company = document.getElementById('company').value;
+        const apikey = document.getElementById('apikey').value;
         const imageFile = document.getElementById('image').files[0];
 
-        const imageUrl = await uploadImageToImgBB(imageFile);
+        const imageUrl = await uploadImageToImgBB(imageFile, apikey);
         alert(imageUrl);
         const signatureHTML = `
         <table style="color: black;width: 600px;">
@@ -108,8 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         signatureContent.innerHTML = signatureHTML;
     }
 
-    async function uploadImageToImgBB(imageFile) {
-        const apiKey = '695f26b91e2206d6b101bda825693a80';
+    async function uploadImageToImgBB(imageFile, apiKey) {
         const formData = new FormData();
         formData.append('image', imageFile);
 
