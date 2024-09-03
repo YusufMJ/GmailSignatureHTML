@@ -46,62 +46,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const imageUrl = await uploadImageToImgBB(imageFile, apikey);
         const signatureHTML = `
-        <table style="color: black;width: 600px;background-color: #ffffff; ">
-            <tr>
-                <td colspan="2" style="padding-top: 20px; text-align: end;">
-                    <img style="width: 100px;" src="https://new.raincode.se/wp-content/uploads/2024/07/Raincode.png" alt="raincode logo">
-                </td>
-            </tr>
-        </table>
-        <table style="color: black;font-family: 'sans-serif', Arial, sans-serif; width: 600px; background-color: #ffffff; border-collapse: collapse;">
-            <tbody>
-                <tr>
-                    <td style="width: 240px;">
-                        <div style="display: inline-block; padding: 10px 10px 7px 10px; background: linear-gradient(to bottom, #5BD091, #4075C1); border-radius: 50%;">
-                            <img src="${imageUrl}" alt="Profile Picture" style="border-radius: 50%; height: 200px; width: 200px;"/>
-                        </div>
-                    </td>
-                    
-                    <td>
-                        <div style="font-size: 43.2px; font-weight: 900; line-height: 43.2px; word-break: break-all;">${name}
-                        </div>
-                        <div style="font-size: 24.9px; font-weight: 500; margin-bottom: 20px; line-height: 24.9px;padding-left:3px;"> ${jobTitle}</div>
-                        <div style="font-size: 11.1px;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" style="color: black;border-collapse: collapse;">
-                                <tr>
-                                    <td style="vertical-align: middle; padding-right: 10px;">
-                                        <img style="width: 16px; height: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/08/phone-24px.png" alt="phone icon">
-                                    </td>
-                                    <td style="vertical-align: middle; text-transform: uppercase;">
-                                        ${phone}
-                                    </td>
-                                </tr>
-                            </table>
-                            <table role="presentation" cellspacing="0" cellpadding="0" style="color: black;border-collapse: collapse; margin-top: 5px;">
-                                <tr>
-                                    <td style="vertical-align: middle; padding-right: 10px;">
-                                        <img style="width: 16px; height: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/09/Union.png" alt="globe icon">
-                                    </td>
-                                    <td style="vertical-align: middle; text-transform: uppercase;">
-                                        <a href="https://${website}" style="text-decoration: none;color: #000;">${website}</a>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table role="presentation" cellspacing="0" cellpadding="0" style="color: black;border-collapse: collapse; margin-top: 5px;">
-                                <tr>
-                                    <td style="vertical-align: middle; padding-right: 10px;">
-                                        <img style="width: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/08/Vector.png" alt="location icon">
-                                    </td>
-                                    <td style="vertical-align: middle; text-transform: uppercase;">
-                                        ${location}
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<table style="color: black; width: 400px; background-color: #ffffff;">
+    <tr>
+        <td colspan="2" style="padding-top: 13.33px; text-align: end;">
+            <img style="width: 66.67px;" src="https://new.raincode.se/wp-content/uploads/2024/07/Raincode.png" alt="raincode logo">
+        </td>
+    </tr>
+</table>
+
+<table style="color: black; font-family: 'sans-serif', Arial, sans-serif; width: 400px; background-color: #ffffff; border-collapse: collapse;">
+    <tbody>
+        <tr>
+            <td style="width: 160px;">
+                <div style="display: inline-block; padding: 6.67px 6.67px 4.67px 6.67px; background: linear-gradient(to bottom, #5BD091, #4075C1); border-radius: 50%;">
+                    <img src="${imageUrl}" alt="Profile Picture" style="border-radius: 50%; height: 133.33px; width: 133.33px;"/>
+                </div>
+            </td>
+            
+            <td>
+                <div style="font-size: 28.8px; font-weight: 900; line-height: 28.8px; word-break: break-all;">${name}</div>
+                <div style="font-size: 16.6px; font-weight: 500; margin-bottom: 13.33px; line-height: 16.6px; padding-left: 2px;">${jobTitle}</div>
+                <div style="font-size: 7.4px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" style="color: black; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding-right: 6.67px;">
+                                <img style="width: 10.67px; height: 10.67px;" src="https://new.raincode.se/wp-content/uploads/2024/08/phone-24px.png" alt="phone icon">
+                            </td>
+                            <td style="vertical-align: middle; text-transform: uppercase;">
+                                ${phone}
+                            </td>
+                        </tr>
+                    </table>
+                    <table role="presentation" cellspacing="0" cellpadding="0" style="color: black; border-collapse: collapse; margin-top: 3.33px;">
+                        <tr>
+                            <td style="vertical-align: middle; padding-right: 6.67px;">
+                                <img style="width: 10.67px; height: 10.67px;" src="https://new.raincode.se/wp-content/uploads/2024/09/Union.png" alt="globe icon">
+                            </td>
+                            <td style="vertical-align: middle; text-transform: uppercase;">
+                                <a href="https://${website}" style="text-decoration: none; color: #000;">${website}</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <table role="presentation" cellspacing="0" cellpadding="0" style="color: black; border-collapse: collapse; margin-top: 3.33px;">
+                        <tr>
+                            <td style="vertical-align: middle; padding-right: 6.67px;">
+                                <img style="width: 10.67px;" src="https://new.raincode.se/wp-content/uploads/2024/08/Vector.png" alt="location icon">
+                            </td>
+                            <td style="vertical-align: middle; text-transform: uppercase;">
+                                ${location}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
     `;
 
         signatureContent.innerHTML = signatureHTML;
