@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <table style="color: black; width: 400px; background-color: #ffffff;">
     <tr>
         <td colspan="2" style="padding-top: 13.33px; text-align: end;">
-            <img style="width: 66.67px;" src="https://new.raincode.se/wp-content/uploads/2024/07/Raincode.png" alt="Raincode">
+            <img style="width: 66.67px;" src="https://i.ibb.co/jHLBQKX/unnamed-6.png" alt="Raincode">
         </td>
     </tr>
 </table>
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <table role="presentation" cellspacing="0" cellpadding="0" style="color: black; border-collapse: collapse;">
                         <tr>
                             <td style="vertical-align: middle; padding-right: 6.67px;">
-                                <img style="width: 16px; height: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/08/phone-24px.png" alt="📞">
+                                <img style="width: 16px; height: 16px;" src="https://i.ibb.co/wChpHNH/unnamed.png" alt="📞">
                             </td>
                             <td style="vertical-align: middle; text-transform: uppercase;">
                                 ${phone}
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <table role="presentation" cellspacing="0" cellpadding="0" style="color: black; border-collapse: collapse; margin-top: 3.33px;">
                         <tr>
                             <td style="vertical-align: middle; padding-right: 6.67px;">
-                                <img style="width: 16px; height: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/09/Union.png" alt="🌐">
+                                <img style="width: 16px; height: 16px;" src="https://i.ibb.co/ScYCMLP/unnamed-5.png" alt="🌐">
                             </td>
                             <td style="vertical-align: middle; text-transform: uppercase;">
                                 <a href="https://${website}" style="text-decoration: none; color: #000;">${website}</a>
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <table role="presentation" cellspacing="0" cellpadding="0" style="color: black; border-collapse: collapse; margin-top: 3.33px;">
                         <tr>
                             <td style="vertical-align: middle; padding-right: 6.67px;">
-                                <img style="width: 16px;" src="https://new.raincode.se/wp-content/uploads/2024/08/Vector.png" alt="📍">
+                                <img style="width: 16px;" src="https://i.ibb.co/4PpzLM7/unnamed-2.png" alt="📍">
                             </td>
                             <td style="vertical-align: middle; text-transform: uppercase;">
                                 ${location}
