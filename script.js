@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <tr>
             <td style="width: 160px;">
                 <div style="display: inline-block; padding: 6.67px 6.67px 0px 6.67px; background: linear-gradient(to bottom, #5BD091, #4075C1); border-radius: 50%;">
-                    <img src="${imageUrl}" alt="Image" style="border-radius: 50%; height: 133.33px; width: 133.33px;"/>
+                    <img href=”” style=”cursor:default;” src="${imageUrl}" alt="Image" style="border-radius: 50%; height: 133.33px; width: 133.33px;"/>
                 </div>
             </td>
             
