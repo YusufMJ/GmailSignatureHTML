@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </td>
             
-            <td>
-                <div style="font-size: 28.8px; font-weight: 900; line-height: 28.8px; word-break: break-all;">${name}</div>
+            <td style="padding-left: 20px;">
+                <div style="font-size: 28.8px; font-weight: 900; line-height: 28.8px; width: 400px;">${name}</div>
                 <div style="font-size: 16.6px; font-weight: 500; margin-bottom: 13.33px; line-height: 16.6px; padding-left: 2px;">${jobTitle}</div>
                 <div style="font-size: 9.4px;">
                     <table role="presentation" cellspacing="0" cellpadding="0" style="color: black; border-collapse: collapse;">
