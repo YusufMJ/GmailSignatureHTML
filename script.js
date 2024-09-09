@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <table style="color: black; font-family: 'sans-serif', Arial, sans-serif; width: 400px; background-color: #ffffff; border-collapse: collapse;">
     <tbody>
         <tr>
-            <td style="width: 160px;">
-                <div style="display: inline-block; padding: 6.67px 6.67px 0px 6.67px; background: linear-gradient(to bottom, #5BD091, #4075C1); border-radius: 50%;">
+            <td>
+                <div style="display: inline-block; background: linear-gradient(to bottom, #5BD091, #4075C1); border-radius: 50%;height: 133.33px; width: 133.33px;padding: 6.67px">
                     <img src="${imageUrl}" alt="Image" style="border-radius: 50%; height: 133.33px; width: 133.33px;"/>
                 </div>
             </td>
